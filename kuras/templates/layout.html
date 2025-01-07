@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Kura{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+   
+<body>
+    <div class="container mx-auto">
+        <nav class="navbar bg-base-100">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="flex items-center gap-4">
+                    <a href="{% url 'index' %}" class="btn btn-ghost text-xl">Kura</a>
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="form-control">
+                        <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-48" />
+                    </div>
+                    <button class="btn btn-ghost">Login</button>
+                    <button class="btn btn-ghost">Register</button>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <hr>
+    <div class="container mx-auto">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
+
+
+
